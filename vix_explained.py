@@ -38,7 +38,7 @@ def calculate_vix_impact(vix_level, market_return, volatility_impact):
 #######################################
 st.set_page_config(layout="wide")
 st.title("📊 Understanding the VIX Index: The Fear Gauge")
-st.markdown("""
+st.markdown(r"""
 The **VIX Index** measures market expectations of near-term volatility based on S&P 500 options. It is often called the "fear gauge" because it spikes during periods of market uncertainty.  
 $$
 \text{VIX} \propto \sigma_{\text{implied}}
@@ -47,7 +47,7 @@ Where:
 - $ \sigma_{\text{implied}} $: Implied volatility derived from option prices.
 - High VIX: Indicates high expected volatility (uncertainty).
 - Low VIX: Indicates low expected volatility (calm markets).
-""")
+""", unsafe_allow_html=True)
 
 # Sidebar for input parameters
 with st.sidebar:
@@ -63,7 +63,7 @@ with st.sidebar:
     # Disclaimer and license
     st.markdown("---")
     st.markdown(
-        """
+        r"""
         **⚠️ Important Legal Disclaimer**  
         This tool is purely for educational purposes. No accuracy guarantees are provided.  
         The author does not engage in financial advising or endorse any specific investment strategies.  
@@ -119,7 +119,7 @@ with tab1:
 
 # Tab 2: Theory Behind VIX
 with tab2:
-    st.markdown("""
+    st.markdown(r"""
     ## Volatility Index (VIX): Mathematical Foundation
     
     ### Overview
@@ -129,26 +129,25 @@ with tab2:
     - Low VIX: Indicates calm and stability.
     
     ### Core Equation
-
-$$
-\text{VIX} \approx \sqrt{\frac{2}{T} \sum_{i} \frac{\Delta K_i}{K_i^2} e^{rT} Q(K_i) - \frac{1}{T} \left( \frac{F}{K_0} - 1 \right)^2}
-$$
-
-Where:
-- $ T $: Time to expiration.
-- $ K_i $: Strike price of the $ i $-th option.
-- $ Q(K_i) $: Midpoint of the bid-ask spread for each option.
-- $ F $: Forward index level.
-- $ r $: Risk-free rate.
+    $$
+    \text{VIX} \approx \sqrt{\frac{2}{T} \sum_{i} \frac{\Delta K_i}{K_i^2} e^{rT} Q(K_i) - \frac{1}{T} \left( \frac{F}{K_0} - 1 \right)^2}
+    $$
+    Where:
+    - $ T $: Time to expiration.
+    - $ K_i $: Strike price of the $ i $-th option.
+    - $ Q(K_i) $: Midpoint of the bid-ask spread for each option.
+    - $ F $: Forward index level.
+    - $ r $: Risk-free rate.
+    
     ### Key Insights
     - **Implied Volatility**: Reflects market sentiment about future price movements.
     - **Fear Gauge**: Spikes during market downturns or crises.
     - **Contrarian Indicator**: Extremely high VIX levels may signal oversold conditions.
-    """)
+    """, unsafe_allow_html=True)
 
 # Tab 3: Comprehensive Tutorial
 with tab3:
-    st.markdown("""
+    st.markdown(r"""
     ## Welcome to the VIX Learning Tool!
     
     **What this tool does:**  
@@ -169,18 +168,18 @@ with tab3:
        - 💹 Compare VIX = 20 vs VIX = 30: Observe sensitivity to volatility changes.
     
     **Pro Tip:** Use the reset button ↺ to quickly return to default values!
-    """)
+    """, unsafe_allow_html=True)
 
 # Tab 4: Practical Labs
 with tab4:
     st.header("🔬 Practical VIX Labs")
-    st.markdown("""
+    st.markdown(r"""
     Welcome to the **Practical VIX Labs** section! Each lab provides a real-world scenario or demonstration 
     to help you apply the VIX concept in a hands-on way.
     
     Use the **"Set Lab Parameters"** buttons to jump directly to recommended settings for each scenario.
     Experiment, take notes, and enjoy exploring how volatility impacts markets!
-    """)
+    """, unsafe_allow_html=True)
     
     # --- Additional Disclaimer ---
     st.warning("""
@@ -200,7 +199,7 @@ with tab4:
     # ---------------- Lab 1 ----------------
     if lab_choice == "Lab 1: Market Downturn":
         st.subheader("📉 Lab 1: Market Downturn and VIX Spike")
-        st.markdown("""
+        st.markdown(r"""
         **Real-World Scenario:**  
         During a market crash, the VIX spikes as investors panic. How does this affect market returns?
         
@@ -209,10 +208,10 @@ with tab4:
         - Analyze the impact of high volatility on returns.
         
         **Suggested Steps**:
-        1. Click "**Set Lab 1 Parameters**" to use VIX = 30, $E(R_m) = -5\\%$, Volatility Impact = 1.5.
+        1. Click "**Set Lab 1 Parameters**" to use VIX = 30, $E(R_m) = -5\%$, Volatility Impact = 1.5.
         2. Observe the adjusted market return.
         3. Increase VIX to 40. Repeat the analysis.
-        """)
+        """, unsafe_allow_html=True)
         
         # Button to set Lab 1 parameters
         st.button("⚡ Set Lab 1 Parameters", on_click=set_lab1_parameters, key="lab1_setup")
@@ -220,7 +219,7 @@ with tab4:
     # ---------------- Lab 2 ----------------
     elif lab_choice == "Lab 2: Calm Markets":
         st.subheader("📈 Lab 2: Calm Markets and Low VIX")
-        st.markdown("""
+        st.markdown(r"""
         **Real-World Scenario:**  
         In calm markets, the VIX remains low. How does this affect investor confidence and returns?
         
@@ -229,10 +228,10 @@ with tab4:
         - Understand why low volatility boosts returns.
         
         **Suggested Steps**:
-        1. Click "**Set Lab 2 Parameters**" to use VIX = 15, $E(R_m) = 10\\%$, Volatility Impact = 0.8.
+        1. Click "**Set Lab 2 Parameters**" to use VIX = 15, $E(R_m) = 10\%$, Volatility Impact = 0.8.
         2. Observe the adjusted market return.
         3. Decrease VIX to 10. Repeat the analysis.
-        """)
+        """, unsafe_allow_html=True)
         
         # Button to set Lab 2 parameters
         st.button("⚡ Set Lab 2 Parameters", on_click=set_lab2_parameters, key="lab2_setup")
@@ -240,7 +239,7 @@ with tab4:
     # ---------------- Lab 3 ----------------
     else:  # Lab 3: Extreme Volatility
         st.subheader("🔥 Lab 3: Extreme Volatility")
-        st.markdown("""
+        st.markdown(r"""
         **Real-World Scenario:**  
         During extreme events (e.g., financial crises), the VIX can reach unprecedented levels. How does this impact markets?
         
@@ -249,10 +248,10 @@ with tab4:
         - Analyze the potential for contrarian opportunities.
         
         **Suggested Steps**:
-        1. Click "**Set Lab 3 Parameters**" to use VIX = 40, $E(R_m) = -10\\%$, Volatility Impact = 2.0.
+        1. Click "**Set Lab 3 Parameters**" to use VIX = 40, $E(R_m) = -10\%$, Volatility Impact = 2.0.
         2. Observe the adjusted market return.
         3. Simulate recovery by reducing VIX to 20. Repeat the analysis.
-        """)
+        """, unsafe_allow_html=True)
         
         # Button to set Lab 3 parameters
         st.button("⚡ Set Lab 3 Parameters", on_click=set_lab3_parameters, key="lab3_setup")
