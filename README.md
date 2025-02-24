@@ -30,38 +30,6 @@ The app is designed for educational purposes and provides an engaging way to lea
 
 ---
 
-## 🛠️ How to Use the App
-
-### 1. Installation
-To run this app locally, follow these steps:
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-repo/vix-app.git
-   cd vix-app
-   ```
-
-2. Install the required dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. Run the Streamlit app:
-   ```bash
-   streamlit run app.py
-   ```
-
-### 2. Using the App
-- **Sidebar**: Adjust input parameters such as the VIX level, market return, and volatility impact factor.
-- **Tabs**: Navigate through different sections of the app:
-  - **Interactive Tool**: Experiment with parameters and view results in real-time.
-  - **Theory Behind VIX**: Dive into the mathematical and conceptual foundations of the VIX.
-  - **Comprehensive Tutorial**: Follow a guided walkthrough of the app's features.
-  - **Practical Labs**: Explore hands-on scenarios to deepen your understanding.
-  - **The Very Basics**: Get started with simplified explanations of the VIX.
-
----
-
 ## 📚 Key Concepts Covered
 
 1. **What Is the VIX?**
@@ -70,16 +38,9 @@ To run this app locally, follow these steps:
    - Low VIX: Indicates calm and stability.
 
 2. **Core Equation**:
-   $$
-   \text{VIX} \approx \sqrt{\frac{2}{T} \sum_{i} \frac{\Delta K_i}{K_i^2} e^{rT} Q(K_i) - \frac{1}{T} \left( \frac{F}{K_0} - 1 \right)^2}
-   $$
-   Where:
-   - $ T $: Time to expiration.
-   - $ K_i $: Strike price of the $ i $-th option.
-   - $ Q(K_i) $: Midpoint of the bid-ask spread for each option.
-   - $ F $: Forward index level.
-   - $ r $: Risk-free rate.
+   ![VIX Equation](images/VIX_Equation.png)
 
+   
 3. **Key Insights**:
    - Implied volatility reflects market sentiment about future price movements.
    - The VIX spikes during market downturns or crises.
@@ -122,4 +83,3 @@ You are free to share and adapt this material for non-commercial purposes, provi
 ![License Badge](https://licensebuttons.net/l/by-nc/4.0/88x31.png)
 
 By **Luís Simões da Cunha**
-
